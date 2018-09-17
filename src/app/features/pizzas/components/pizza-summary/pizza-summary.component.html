@@ -1,0 +1,21 @@
+<section class="pizza-summary">
+        <h1 class="form__title">Order Summary</h1>
+
+        <div class="pizza-summary__pizza" *ngFor="let pizza of pizzas; let i=index">
+            <div>
+                <h3>{{pizza.size | titlecase}} Pizza
+                    <span class="pizza-summary__price"> {{ getPrices(pizza.size).base | currency:'BRL'}}</span>
+                </h3>
+                <div class="pizza-summary__toppings" *ngFor="let topping of pizza.toppings">
+                    <div class="pizza-summary__topping">
+                        <i class="fa fa-plus"></i>
+                        {{topping | titlecase}}
+                        <span class="pizza-summary__price">{{ getPrices(pizza.size).toppings | currency:'BRL'}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pizza-summary__total-price">
+            Total {{total| currency:'BRL'}}
+        </div>
+</section>

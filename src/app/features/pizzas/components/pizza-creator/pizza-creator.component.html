@@ -1,0 +1,32 @@
+<section class="pizza-creator">
+
+    <h1 class="form__title">Choose your pizzas
+        <button class="form__title__button" type="button" (click)="onAdd()">
+            <i class="fa fa-fw fa-plus"></i>
+            Add pizza</button>
+    </h1>
+    <div class="pizza-creator__pizza" *ngFor="let pizza of pizzas.controls; let i=index">
+
+        <div class="pizza-creator__pizza__header" (click)="onToggle(i)">
+            <i class="pizza-creator__pizza__icon fa fa-fw" [class.fa-chevron-down]="openPizza !== i"
+                [class.fa-chevron-up]="openPizza === i"></i>
+            Pizza {{i+1}}
+            <i class=" pizza-creator__pizza__status fa fa-fw" [class.fa-check]="pizza.valid"></i>
+            <div class="pizza-creator__pizza__delete" *ngIf="pizzas.controls.length > 1" (click)="onRemove(i)">
+                <i class="fa fa-fw fa-trash"></i>
+            </div>
+        </div>
+
+        <div class="pizza-creator__pizza__content" [class.pizza-creator__pizza__content--open]="openPizza === i"
+            [formGroup]="pizza">
+            <h2 class="pizza-creator__piazza__title"> Select the Size
+                <span class="form__label form__label--required">*</span>
+            </h2>
+            <pizza-size formControlName="size"></pizza-size>
+
+            <h1 class="form__title">Pick your toppings</h1>
+            <pizza-toppings formControlName="toppings"></pizza-toppings>
+        </div>
+    </div>
+
+</section>

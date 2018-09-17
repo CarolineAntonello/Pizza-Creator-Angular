@@ -1,0 +1,58 @@
+.pizza-creator__pizza{
+    &__header{
+        font-size: 16px;
+        padding: 10px 15px;
+        position: relative;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+
+    &__icon{
+        font-size: 14px;
+        margin-right: 10px;
+        position: relative;
+        top: -2px;
+    }
+
+    &__status{
+        font-size: 14px;
+        margin-right: 5px;
+        position: relative;
+        top: -1px;
+    }
+
+    &__status.fa-check{
+        color: #98C550;
+    }
+
+    &__delete{
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        padding: 9px;
+        border-radius: 3px;
+        cursor: pointer;
+        color: firebrick;
+        font-size: 14px;
+
+    }
+
+    &__content{
+        display: none;
+        padding: 10px 15px;
+    }
+    &__content--open{
+        display: block;
+    }
+
+    &__title{
+        color: #6E7790;
+        font-size: 16px;
+        position: relative;
+        margin: 16px 0 10px 0;
+        font-weight: bold;
+    }
+}
+
+
+  
